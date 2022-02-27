@@ -37,12 +37,16 @@ class mc {
 }
 let cp = new mc('zyy');
 cp.doSomething();
+function create(cor, hour) {
+    return new cor(hour);
+}
 class clock {
     constructor(_h) { }
     tick() {
         console.log('跳');
     }
 }
+console.log(create(clock, 1));
 let square = {};
 square.color = "blue";
 square.sideLength = 10;

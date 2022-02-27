@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2022-02-10 17:16:35
- * @LastEditTime: 2022-02-10 20:35:19
+ * @LastEditTime: 2022-02-27 14:58:29
  * @LastEditors: Please set LastEditors
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: \ts\官方文档\src\02接口类型.ts
@@ -133,18 +133,21 @@ cp.doSomething()
 // }
 
 interface ClockConstructor{
-    new (hour:number):void;
+    new (hour:number):Clock;
 }
 interface Clock{
     tick():void;
 }
+function create(cor:ClockConstructor,hour:number):Clock{
+    return new cor(hour)
+}   
 class clock implements Clock{
     constructor(_h:number){}
     tick(){
         console.log('跳');
     }
 }
-
+console.log(create(clock,1))
 
 // 类的接口的继承 （ 提高了复用性 ）
 interface Shape {
@@ -159,7 +162,7 @@ interface Square extends Shape, PenStroke {
     sideLength: number;
 }
 
-let square = <Square>{};
+let square = {} as Square;
 square.color = "blue";
 square.sideLength = 10;
 square.penWidth = 5.0;

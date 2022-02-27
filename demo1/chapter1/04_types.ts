@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2022-02-08 16:18:39
- * @LastEditTime: 2022-02-08 16:51:11
+ * @LastEditTime: 2022-02-27 13:48:09
  * @LastEditors: Please set LastEditors
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: \ts\demo1\chapter1\04_types.ts
@@ -19,13 +19,13 @@ let b:{name:string,age?:number}
 b={name:'fjh'}
 
 // 任意属性 : [] 表示除string是必须要求的 你可以任意增添属性名 且类型不作检测
-let c:{name:string,[propName:string]:unknown}
-c={name:'fjh',age:18,sex:'nan'}
+let c:{name:string,[propName:number]:unknown}
+c={name:'fjh',[2]:18,[3]:'nan'}
 
 // 类型声明  函数声明：参数 和 返回值 的声明
 // 设置 函数结构 的类型声明  
 // 语法： (形参：类型 ，形参：类型 ... ) => 返回值:类型
-let d:(a:number,b:number)=>number;
+let d:(a:number,b:number)=>number
 d = function(a,b){
     return a+b
 }

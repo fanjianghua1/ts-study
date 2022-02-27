@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2022-02-08 15:55:18
- * @LastEditTime: 2022-02-08 16:17:45
+ * @LastEditTime: 2022-02-27 13:43:23
  * @LastEditors: Please set LastEditors
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: \ts\demo1\chapter1\03_types.ts
@@ -52,7 +52,7 @@ function fn(){
     return null
 } 
 function fn1():void{
-    return null
+    return undefined
 }
 
 // never 表示永远没有返回值  : 报错  或  死循环 
